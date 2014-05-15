@@ -12,15 +12,15 @@ Once this finishes running, you can build the project by running the command `gr
 
 Credit where is is due. This is not a fork exactly, but an idea I got from [github.com/buildingblocks](https://github.com/buildingblocks/bb-prototype-website). I have heavily simplified their very clever work to suit my own needs.
 
-### [Assemble](http://assemble.io/)?
+### [Assemble](http://assemble.io/)
 
 Assemble is a component and static site generator that makes it dead simple to build modular sites, documentation and components from reusable templates and data.
 
-### [Inuit.css](http://inuitcss.com/)?
+### [Inuit.css](http://inuitcss.com/)
 
 Powerful, scalable, Sass-based, BEM, OOCSS framework.
 
-### [Grunt.js](http://gruntjs.com/)?
+### [Grunt.js](http://gruntjs.com/)
 
 In one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you've configured it, a task runner can do most of that mundane work for you—and your team—with basically zero effort.
 
