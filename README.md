@@ -1,4 +1,4 @@
-# Matt Tyas Prototype Website
+# Prototype Framework
 
 > Front-end website prototype system, built with Assemble, Inuit.css and Grunt.
 
