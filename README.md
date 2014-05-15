@@ -10,6 +10,8 @@ Then, once you have the project downloaded, run the command `npm install` in the
 
 Once this finishes running, you can build the project by running the command `grunt`
 
+Credit where is is due. This is not a fork exactly, but an idea I got from [github.com/buildingblocks](https://github.com/buildingblocks/bb-prototype-website). I have heavily simplified their very clever work to suit my own needs.
+
 ### [Assemble](http://assemble.io/)?
 
 Assemble is a component and static site generator that makes it dead simple to build modular sites, documentation and components from reusable templates and data.
