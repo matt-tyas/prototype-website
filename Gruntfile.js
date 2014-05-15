@@ -57,23 +57,6 @@ module.exports = function(grunt) {
           }
         },// end sass
 
-        // Combine Media Queries
-        cmq: {
-          options: {
-            log: false
-          },
-          dev: {
-            files: {
-              'css': ['web/css/style.css']
-            }
-          },
-          dist: {
-           files: {
-             'css': ['web/css/style.css']
-           }
-          }
-        }, // end cmq
-
         // Auto Vendor Prefix CSS
         autoprefixer: {
           options: {
@@ -98,8 +81,8 @@ module.exports = function(grunt) {
               'src/js/main.js', 
               'src/js/plugins/*.js',
               ], 
-              'js/vendor/modernizr-2.6.2.min.js':  [ 'src/js/vendor/modernizr-2.6.2.min.js', ],
-              'js/vendor/jquery-1.10.2.min.js': [ 'src/js/vendor/jquery-1.10.2.min.js', ]       
+              'web/js/vendor/modernizr-2.6.2.min.js':  [ 'src/js/vendor/modernizr-2.6.2.min.js', ],
+              'web/js/vendor/jquery-1.10.2.min.js': [ 'src/js/vendor/jquery-1.10.2.min.js', ]       
             }
           }
         }, // end JS
@@ -136,6 +119,23 @@ module.exports = function(grunt) {
             }]
           }
         }, // imagemin
+
+        // Combine Media Queries
+        cmq: {
+          options: {
+            log: true
+          },
+          dev: {
+            files: {
+              'web/css/style.css': 'web/css/style.css'
+            }
+          },
+          dist: {
+            files: {
+              'web/css/style.css': 'web/css/style.css'
+            }
+          }
+        }, // end cmq
 
         // Watch for changes
         watch: {
@@ -208,11 +208,11 @@ module.exports = function(grunt) {
       'assemble',
       'scsslint',
       'sass:dev', 
-      'cmq:dev',
       'autoprefixer',
       'uglify',
        //'jshint',
       'imagemin',
+      'cmq:dev',
       'watch'
     ]);
 
@@ -221,11 +221,11 @@ module.exports = function(grunt) {
       'clean',
       'assemble',
       'sass:dist', 
-      'cmq:dist',
       'autoprefixer',
       'uglify',
        //'jshint',
       'imagemin',
+      'cmq:dist',
       'watch'
     ]);
 };

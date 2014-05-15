@@ -24,5 +24,9 @@ In one word: automation. The less work you have to do when performing repetitive
 
 [Find out more at the Grunt.js website](http://gruntjs.com/).
 
-## Release History
+## Documentation
+ * To run the scss lint task you need to also install the scss gem `$ gem install scss-lint` [this article is helpful](http://www.theguardian.com/info/developer-blog/2014/may/13/improving-sass-code-quality-on-theguardiancom).
+
+## Release history
+ * 15/06/12 V1.1 Fixed issue with cmq no compiling to the correct directory, updated readme to include info scss lint
  * 15/06/15 V1 HTML and SASS builds, grunt tasks are in place.
