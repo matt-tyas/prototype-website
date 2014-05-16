@@ -137,6 +137,16 @@ module.exports = function(grunt) {
           }
         }, // end cmq
 
+        // Simply copy the fonts over
+        copy: {
+          files: {
+            cwd: 'src/fonts',      // set working folder / root to copy
+            src: '**/*',           // copy all files and subfolders
+            dest: 'web/fonts',    // destination folder
+            expand: true          // required when using cwd
+          }
+        },
+
         // Watch for changes
         watch: {
           options: {
@@ -169,6 +179,7 @@ module.exports = function(grunt) {
         } // end watch
     });
     
+
     // HTML
     grunt.loadNpmTasks('assemble');
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -182,8 +193,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // IMAGES
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    // COPY 
+    grunt.loadNpmTasks('grunt-contrib-copy');
     // WATCH
     grunt.loadNpmTasks('grunt-contrib-watch');
+
 
     // default task
     grunt.registerTask('default', [
@@ -201,6 +215,7 @@ module.exports = function(grunt) {
       // 'jshint', // @TODO fix this - task hangs
       'imagemin',
       'cmq:dev',
+      'copy',
       'watch'
     ]);
 
@@ -214,6 +229,7 @@ module.exports = function(grunt) {
       // 'jshint', // @TODO fix this - task hangs
       'imagemin',
       'cmq:dist',
+      'copy',
       'watch'
     ]);
 };
