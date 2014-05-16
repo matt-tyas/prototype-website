@@ -13,6 +13,8 @@ module.exports = function(grunt) {
             options: {
                 layout: "src/layouts/default.hbs",
                 partials: ['src/partials/**/*.hbs'],
+                helpers: ['handlebars-helper-isActive', 'foo/*.js'],
+                helpers: ['handlebars-helper-autolink', 'foo/*.js'],
                 flatten: true
             },
             pages: {
