@@ -110,13 +110,13 @@ module.exports = function(grunt) {
         
         // Images
         imagemin: {
-          all: {
-            files: [{
-              expand: true,
-              cwd: 'scr/images/',
-              src: ['*.{png,jpg,gif}', '!dist/*.{png,jpg,gif}'],
-              dest: 'web/images/'
-            }]
+          dynamic: {
+              files: [{
+                  expand: true,
+                  cwd: 'src/images/',
+                  src: ['**/*.{png,jpg,gif}'],
+                  dest: 'web/images/'
+              }]
           }
         }, // imagemin
 
@@ -157,9 +157,9 @@ module.exports = function(grunt) {
               spawn: false
             }
           },
-          // images: {
-          //   files: ['images/**']
-          // },
+          images: {
+            files: ['src/images/**']
+          },
           registry: {
             files: ['{,**}/*.{hbs}'],
             options: {
@@ -167,7 +167,6 @@ module.exports = function(grunt) {
             }
           },
         } // end watch
-
     });
     
     // HTML
@@ -185,17 +184,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     // WATCH
     grunt.loadNpmTasks('grunt-contrib-watch');
-    
-    // BUILD TASK
-    // grunt.registerTask('default', [
-    //   'clean',
-    //   'assemble',
-    //   'sass:dev', 
-    //   'cmq:dev',
-    //   'uglify',
-    //   'jshint',
-    //   'watch'
-    // ]);
 
     // default task
     grunt.registerTask('default', [
@@ -210,7 +198,7 @@ module.exports = function(grunt) {
       'sass:dev', 
       'autoprefixer',
       'uglify',
-       //'jshint',
+      // 'jshint', // @TODO fix this - task hangs
       'imagemin',
       'cmq:dev',
       'watch'
@@ -223,7 +211,7 @@ module.exports = function(grunt) {
       'sass:dist', 
       'autoprefixer',
       'uglify',
-       //'jshint',
+      // 'jshint', // @TODO fix this - task hangs
       'imagemin',
       'cmq:dist',
       'watch'
