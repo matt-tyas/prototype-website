@@ -140,12 +140,36 @@ module.exports = function(grunt) {
         // Simply copy the fonts over
         copy: {
           files: {
-            cwd: 'src/fonts',      // set working folder / root to copy
-            src: '**/*',           // copy all files and subfolders
-            dest: 'web/fonts',    // destination folder
-            expand: true          // required when using cwd
+            cwd: 'src/fonts',
+            src: '**/*',
+            dest: 'web/fonts',
+            expand: true 
           }
-        },
+        }, // end copy
+        
+        // SVG Optimisation
+        svgmin: {
+          options: { 
+              plugins: [{
+                  removeViewBox: false
+              }, {
+                  removeUselessStrokeAndFill: false
+              }, {
+                  convertPathData: { 
+                      straightCurves: false
+                  }
+              }]
+          },
+          dist: {
+              files: [{              
+                  expand: true,      
+                  cwd: 'src/images',  
+                  src: ['**/*.svg'],  
+                  dest: 'web/images/', 
+                  ext: '.svg'
+              }]
+          }
+        }, // end svgmin
 
         // Watch for changes
         watch: {
@@ -193,6 +217,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // IMAGES
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    // GRAPHICS
+    grunt.loadNpmTasks('grunt-svgmin');
     // COPY 
     grunt.loadNpmTasks('grunt-contrib-copy');
     // WATCH
@@ -214,6 +240,7 @@ module.exports = function(grunt) {
       'uglify',
       // 'jshint', // @TODO fix this - task hangs
       'imagemin',
+      'svgmin',
       'cmq:dev',
       'copy',
       'watch'
@@ -228,6 +255,7 @@ module.exports = function(grunt) {
       'uglify',
       // 'jshint', // @TODO fix this - task hangs
       'imagemin',
+      'svgmin',
       'cmq:dist',
       'copy',
       'watch'
