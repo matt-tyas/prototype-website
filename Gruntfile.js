@@ -15,7 +15,11 @@ module.exports = function(grunt) {
                 partials: ['src/partials/**/*.hbs'],
                 helpers: ['handlebars-helper-isActive', 'foo/*.js'],
                 helpers: ['handlebars-helper-autolink', 'foo/*.js'],
+                helpers: ['handlebars-helper-md', 'foo/*.js'],
                 flatten: true
+            },
+            files: {
+              'dist/': ['src/templates/*.hbs']
             },
             pages: {
                 files: {
