@@ -31,6 +31,7 @@ In one word: automation. The less work you have to do when performing repetitive
  * Run `$ scss-lint path/to/your/sass/files` on the scss to lint.
 
 ## Release history
+ * 21/06/14 V1.3 Added basic layout to demo. Naming conventions rationalised.
  * 16/06/14 V1.2 Added SVG min and placeholder image and font
  * 15/06/14 V1.1 Fixed issue with cmq no compiling to the correct directory, updated readme to include info on scss lint
  * 15/06/14 V1 HTML and SASS builds, grunt tasks are in place.
